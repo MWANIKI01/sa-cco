@@ -1,0 +1,30 @@
+{
+  "name": "@myorg/kabesh",
+  "version": "1.0.0",
+  "description": "lets do this",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node server.js & open 6",
+    "test": "npm run test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "components"
+  },
+  "author": "Infospace-meta",
+  "license": "ISC",
+  "devDependencies": {
+    "open": "^10.0.3",
+    "render": "^0.1.4",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  },
+  "keywords": [
+    "kabesh"
+  ]
+}

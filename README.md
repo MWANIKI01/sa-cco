@@ -5,7 +5,7 @@ then select a known language/framework e.g html, vue
 
 ## Guide
 Clone the repository
-run >npm install
+run > npm install
 
 Create your component in the resources folder
 

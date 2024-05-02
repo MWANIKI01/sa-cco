@@ -1,0 +1,157 @@
+<article class="container">
+  <section class="intro flow">
+    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+    <p>Et laborum, inventore provident ipsam ex, dignissimos perspiciatis, suscipit sed ullam sequi repudiandae esse vitae. Pariatur debitis ipsum consectetur. Ut, voluptas necessitatibus.</p>
+    <button>Learn more</button>
+  </section>
+  <section class="details">
+    <header><%title%></header>
+    <div class="scroll-container">
+      <article class="scroll-content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam cupiditate explicabo autem voluptatem natus fuga, iste, dicta consectetur qui commodi nemo, quisquam minima doloremque aliquam reiciendis at dolorum eius esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui excepturi accusantium, voluptatem dolorem maiores possimus deleniti rerum adipisci iusto nobis consequatur reiciendis. Alias ipsa modi, ducimus esse molestiae nihil facilis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum natus libero amet? Alias autem ab commodi iusto enim. Unde eum asperiores nobis odio voluptate, enim culpa sit! Reprehenderit, soluta? Provident. Lorem ipsum dolor sit amet consectetur, adipisicing elit. A ducimus sunt consectetur quis ratione sapiente suscipit ullam aliquam inventore. Delectus eligendi numquam nisi at rem quia aliquam. Quaerat, magnam nemo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugit dolorem totam numquam culpa quo quos itaque similique in ratione incidunt recusandae perferendis dolore hic porro enim, obcaecati cumque ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias amet atque delectus quia a labore, repellendus nemo inventore cumque fugit ea voluptas voluptates laborum! Praesentium, culpa qui! Ratione, maiores reprehenderit.
+      </article>
+    </div>
+    <footer>Footer</footer>
+  </section>
+</article>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --h: 330;
+  --s: 88%;
+  --l: 66%;
+  --brand-color-bg: hsl(var(--h) var(--s) var(--l));
+  --brand-color-fg: hsl(0 10% 99%);
+  --border: 1px solid var(--brand-color-bg);
+  --shadow-blur: 1.5rem;
+  --shadow-color: hsla(var(--h) var(--s) var(--l) / 0.6);
+  --shadow-y: 1rem;
+  ---shadow-y: calc(var(--shadow-y) * -1);
+  --space: clamp(1.125rem, 0.8rem + 1.3cqi, 1.875rem);
+  --gradient: linear-gradient(
+    165deg,
+    transparent 50%,
+    hsla(var(--h) var(--s) var(--l) / 0.15) 125%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --l: 46%;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+  font-size: clamp(1rem, 0.6rem + 1.125cqi, 1.125rem);
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+button {
+  font: inherit;
+  line-height: normal;
+  padding: 0.5rem 1.5rem 0.6rem;
+  background: var(--brand-color-bg);
+  color: var(--brand-color-fg);
+  border: unset;
+  border-radius: 0.25rem;
+}
+
+button:active {
+  translate: 0 1px;
+}
+
+.flow > * + * {
+  margin-block-start: var(--space);
+}
+
+.container {
+  display: grid;
+  border: var(--border);
+  border-radius: 1rem;
+  inline-size: min(55rem, 100%);
+}
+
+.intro {
+  padding: var(--space);
+  background-image: var(--gradient);
+}
+
+.details {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border-block-start: var(--border);
+}
+
+.details :where(header, footer) {
+  padding: calc(var(--space) / 2) var(--space);
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-image: var(--gradient);
+}
+
+.scroll-container {
+  position: relative;
+  border-block: var(--border);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-block-size: 12rem;
+  scrollbar-color: var(--brand-color-bg) transparent;
+  animation: scroll-shadow-inset linear;
+  animation-timeline: scroll(self);
+}
+
+.scroll-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--space);
+}
+
+@keyframes scroll-shadow-inset {
+  from {
+    box-shadow: inset 0 var(---shadow-y) var(--shadow-blur) var(---shadow-y)
+      var(--shadow-color);
+  }
+
+  to {
+    box-shadow: inset 0 var(--shadow-y) var(--shadow-blur) var(---shadow-y)
+      var(--shadow-color);
+  }
+}
+
+@media (min-width: 40rem) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .details {
+    border-block-start: unset;
+    border-inline-start: var(--border);
+  }
+}
+
+  
+</style>
